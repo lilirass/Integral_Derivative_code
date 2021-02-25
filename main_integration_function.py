@@ -1,7 +1,7 @@
 import integrand_functions
 import auxiliary_integration_functions
 
-#main integration function
+#main integration function to give precision of 1e-10 by default
 def integral(left_endpoint, right_endpoint, integrand, func_params, npoints, precision=1e-10, integration_method="midpoint"):
     """
 it is the main integration function with defult precision of 1e-10 and midpoint inegration method as a default
