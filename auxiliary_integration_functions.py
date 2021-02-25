@@ -1,5 +1,6 @@
 import integrand_functions
 
+
 # midpoint rule
 def integral_aux_midpoint(left_endpoint, right_endpoint, integrand, func_params, npoints):
    
