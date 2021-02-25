@@ -37,6 +37,7 @@ def my_power_func(x, func_params):
 def analytical_integral_my_power_func (left_endpoint, right_endpoint, func_params):
    """
 analytical_integral_my_power_func = ((x+x0)^(n+1))/(n+1) + y0*x
+arguments are x, x0, n and y0 that can be integer or float
    """
    x0 = func_params["x_shift"]
    n = func_params["power"]
@@ -109,8 +110,11 @@ sin_of_power_func = A * f (x, fun_params) + B
    res = A * math.sin (f(x, func_params)) + B
    return (res)
 
- """
- #some examples for checking functions
+
+
+
+#some examples for checking functions
+"""
 my_res = my_power_func (1,{"x_shift":3.0 ,"power":2, "y_shift":3 } )
 print (my_res)
 my_res = my_power_func (3,{"x_shift":2.0 ,"power":4, "y_shift":10 } )
@@ -126,4 +130,4 @@ print(my_res)
 
 my_res = sin_of_power_func (1,general_power_func,{"x_multiple": 2, "x_shift":3.0 ,"power":2, "y_shift":3 }, {"multiplicity": 2 , "shift" :10})
 print (my_res)
-""
+"""
