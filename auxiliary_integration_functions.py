@@ -23,7 +23,7 @@ n should b positive even integer
 n is the number of subintervals
 endpointa would be xi = {x0,x1,x2,...,xn}
     """ 
-    dx = (right_endpoint-left_endpoint)/(npoints)
+    dx = (right_endpoint - left_endpoint) / (npoints)
     #B = sum f(x(i=odd)) and C = sum f(x(i=even))
     B = 0
     C = 0
