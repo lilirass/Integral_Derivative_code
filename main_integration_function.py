@@ -28,6 +28,7 @@ def integral(left_endpoint, right_endpoint, integrand, func_params, npoints, pre
             result=B
               
         
+        
     return result
 
 answer = integral(0, 1, integrand_functions.my_power_func, {"x_shift":3.0 ,"power":2, "y_shift":3 }, 3, precision=1e-3, integration_method="midpoint")
