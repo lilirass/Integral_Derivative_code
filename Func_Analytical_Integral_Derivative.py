@@ -1,4 +1,4 @@
-#different integrand functions and their analytical integration
+#different functions and their analytical integration and differentiation
 import math
 
 def my_power_func(x, func_params):
@@ -36,8 +36,8 @@ def my_power_func(x, func_params):
 
 def analytical_integral_my_power_func (left_endpoint, right_endpoint, func_params):
    """
-analytical_integral_my_power_func = ((x+x0)^(n+1))/(n+1) + y0*x
-arguments are x, x0, n and y0 that can be integer or float
+ analytical_integral_my_power_func = ((x+x0)^(n+1))/(n+1) + y0*x
+ arguments are x, x0, n and y0 that can be integer or float
    """
    x0 = func_params["x_shift"]
    n = func_params["power"]
@@ -47,7 +47,19 @@ arguments are x, x0, n and y0 that can be integer or float
    return (res)
 
 
+def analytical_derivative_my_power_func (x, func_params):
+   """
+ analytical_derivative_my_power_func = n * (x+x0)^(n-1) 
+ arguments are x, x0, n and y0 that can be integer or float
+   """
+   x0 = func_params["x_shift"]
+   n = func_params["power"]
+   y0 = func_params["y_shift"]
 
+   res = n * (x+x0) ** (n-1)
+   return (res)
+
+#==========================================================================================================
 
 
 def general_power_func (x, func_params):
@@ -62,7 +74,7 @@ general_power_func = A* (x+x0)^n + y0
    return (res)
 
 
-def analytical_general_power_func (left_endpoint, right_endpoint, func_params):
+def analytical_integral_general_power_func (left_endpoint, right_endpoint, func_params):
    """
 general_power_func = A * (x+x0)^(n+1)]/(n+1) + y0*x
    """
@@ -74,7 +86,7 @@ general_power_func = A * (x+x0)^(n+1)]/(n+1) + y0*x
    return (res)
 
 
-def derivative_general_power_func (x, func_params):
+def analytical_derivative_general_power_func (x, func_params):
    """
    A * (n-1) * (x+x0)^(n-1)
    """
@@ -85,6 +97,7 @@ def derivative_general_power_func (x, func_params):
    res = A* n * (x+x0)**(n-1)
    return (res)
 
+#==========================================================================================================================================
 
 def new_func(x,func_params):
    """
@@ -96,7 +109,7 @@ new_func = C/(x^2 + a^2)
    return (c/(x**2 + a**2))
 
 
-def analytical_new_func(left_endpoint, right_endpoint, func_params):
+def analytical_integral_new_func(left_endpoint, right_endpoint, func_params):
    """
 c * arctan (x/a)/a + c
    """
@@ -105,9 +118,18 @@ c * arctan (x/a)/a + c
    res = (c/a) * ((math.atan(right_endpoint/a)) - (math.atan(left_endpoint/a)))
    return (res)  
 
-   
+
+def analytical_derivative_new_func(x, func_params):
+   """
+ (- 2 * c * x ) /(x^2 + a^2)^2
+   """
+   c = func_params["multiple"]
+   a = func_params["shift"]
+   res = ( -2 * c * x ) / (x**2 + a**2)**2
+   return (res)  
 
 
+#============================================================================================================
    # another function to practice more
     
 def sin_of_power_func (x, f, func_params , sin_params):
