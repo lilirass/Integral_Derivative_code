@@ -1,4 +1,4 @@
-import integrand_functions
+import Func_Analytical_Integral_Derivative
 
 
 # midpoint rule
